@@ -1,0 +1,100 @@
+ 1925  rm linux101/
+ 1926  rm -r linux101/
+ 1927  ls
+ 1928  git status
+ 1929  res="0# "
+ 1930  for a in {1..5}; do res+="a# "; done
+ 1931  echo $res
+ 1932  clear
+ 1933  find . -name "final_out_seqs*"
+ 1934  cp --h
+ 1935  cp final_out_seqs.fasta ~/miniconda3/envs/PMPrimer/VagBac/FinalOutSeqs.fasta
+ 1936  cd ~/home
+ 1937  cd ../../../
+ 1938  cd ..
+ 1939  ls
+ 1940  cd ..
+ 1941  cd ~
+ 1942  ls
+ 1943  /mnt
+ 1944  ls
+ 1945  cd /mnt
+ 1946  ls
+ 1947  cd wsl
+ 1948  ls
+ 1949  ls -a
+ 1950  cd ..
+ 1951  cd mnt/wslg
+ 1952  ls
+ 1953  cd doc/
+ 1954  ls
+ 1955  cd ~/miniconda3/
+ 1956  ls
+ 1957  cd envs/lab_task_1/
+ 1958  ls
+ 1959  conda create -h
+ 1960  conda create -n PMPrimer
+ 1961  conda activate PMPprimer
+ 1962  conda activate PMPrimer
+ 1963  cd ..
+ 1964  ls
+ 1965  cd PMPrimer/
+ 1966  ls
+ 1967  mkdir VagBac
+ 1968  cd VagBac/
+ 1969  ls
+ 1970  pip3 install pmprimer
+ 1971  sudo apt install python3-pip
+ 1972  pip3 -h
+ 1973  pip3 install pmprimer
+ 1974  pip3 show
+ 1975  pip3 config
+ 1976  pip3 config list
+ 1977  pip3 show list
+ 1978  pip3 config list
+ 1979  pip3 index
+ 1980  exit
+ 1981  cd Documents/repositories/DDI_2023_private/
+ 1982  mkdir docs scripts history data resources
+ 1983  ls
+ 1984  rm -r data history resources scripts
+ 1985  ls
+ 1986  mkdir linux101
+ 1987  cd linux101/
+ 1988  ls
+ 1989  mkdir docs scripts history data resources
+ 1990  ls
+ 1991  cd docs
+ 1992  res="0# "
+ 1993  for a in {1..144000}; do 	res+="$a# "; done
+ 1994  for a in {1..144000}; do 	res+="$a# "; done
+ 1995  for a in {1..144000}; do 	res+="$a# "; done
+ 1996  for a in {1..144000}; do res+="$a# "; done
+ 1997  echo "${res%"# "}" > numbers.txt
+ 1998  wc nubmers.txt --chars
+ 1999  wc numbers.txt --chars
+ 2000  tail numbers.txt 
+ 2001  clear
+ 2002  nano numbers.txt 
+ 2003  cd ..
+ 2004  ln -s /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/docs/numbers.txt numbers_softlink.txt
+ 2005  ln docs/numbers.txt data/numbers_hardlink.txt
+ 2006  ls data
+ 2007  wc data/numbers_hardlink.txt --chars
+ 2008  wc data/numbers_softlink.txt --chars
+ 2009  ln --help
+ 2010  ls data/
+ 2011  touch docs/links_differences.txt
+ 2012  nano docs/links_differences.txt
+ 2013  du -sh data
+ 2014  du -h data
+ 2015  du -s data
+ 2016  du -h docs
+ 2017  du data
+ 2018  du --help
+ 2019  du -a data
+ 2020  du -a --inodes
+ 2021  du -a --inodes data
+ 2022  nano docs/links_differences.txt
+ 2023  cat docs/links_differences.txt 
+ 2024  history | tail -n 100 > history/history_task1.txt
