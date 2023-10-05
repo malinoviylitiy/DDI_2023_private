@@ -1,0 +1,103 @@
+ 1884  ln -alR
+ 1885  -al
+ 1886  ls -alR
+ 1887  cd Documents/
+ 1888  ls -al
+ 1889  exit
+ 1890  ls
+ 1891  icalcs --help
+ 1892  exit
+ 1893  ls
+ 1894  cd ~/miniconda3/envs/lab_task_1/
+ 1895  ls
+ 1896  cd test_3_after_mmseqs2/
+ 1897  ls
+ 1898  head mmseqs2_output.fa_all_seqs.fasta 
+ 1899  clear
+ 1900  ls
+ 1901  cd ..
+ 1902  cd test_2
+ 1903  ls
+ 1904  cd ..
+ 1905  cd test_1
+ 1906  ls
+ 1907  cd ..
+ 1908  cd test_3_after_mmseqs2/
+ 1909  ls
+ 1910  clear
+ 1911  ls -a
+ 1912  clear
+ 1913  ls
+ 1914  head mmseqs2_output.fa_all_seqs.fasta 
+ 1915  head mmseqs2_output.fa_cluster.tsv 
+ 1916  head mmseqs2_output.fa_rep_seq.fasta 
+ 1917  cd ..
+ 1918  cd test_1
+ 1919  ls
+ 1920  head res23.txt 
+ 1921  head db2023.fasta 
+ 1922  cat res23.txt | less
+ 1923  cd ..
+ 1924  cd test_3_after_mmseqs2/
+ 1925  ls -al
+ 1926  cat mmseqs2_output.fa_cluster.tsv | less
+ 1927  head db2023.fasta | grep ">" | wc -l
+ 1928  cat db2023.fasta | grep ">" | wc -l
+ 1929  clear
+ 1930  ls -l
+ 1931  primer-blast -h
+ 1932  primer-blast --help
+ 1933  conda -list
+ 1934  conda -h
+ 1935  conda -info
+ 1936  conda info
+ 1937  conda env lict
+ 1938  conda env list
+ 1939  conda list
+ 1940  blast update
+ 1941  conda blast update
+ 1942  mamba update blast
+ 1943  mamba install -c bioconda primer3
+ 1944  primer-blast -h
+ 1945  primer3 -h
+ 1946  primer -h
+ 1947  blastn --version
+ 1948  primer3_core --version
+ 1949  primer3_core --help
+ 1950  primer3_core -h
+ 1951  ls
+ 1952  primer3_core -format_output -sequence=FinaOutSequs250.fasta -output=OutputPrimer3
+ 1953  primer3_core --format_output --sequence=FinaOutSequs250.fasta --output=OutputPrimer3
+ 1954  primer3_core --output=OutputPrimer3 FinaOutSeqs250.fasta
+ 1955  makedbblast FinaOutSeqs250.fasta 
+ 1956  makeblastdb FinaOutSeqs250.fasta 
+ 1957  makeblastdb -in FinaOutSeqs250.fasta 
+ 1958  makeblastdb -h
+ 1959  makeblastdb --help
+ 1960  cd ~/MyGitHubReps/DDI_2023_private/linux101/scripts/
+ 1961  cat << EOF > runme.sh
+> #!/bin/bash
+> echo "Hello, Linux!"
+> EOF
+ 1962  chmod -x runme.sh
+ 1963  ./runme.sh
+ 1964  cd .. 
+ 1965  cd docs
+ 1966  ls -l
+ 1967  chmod 644 numbers.txt 
+ 1968  ls -l
+ 1969  cd .. 
+ 1970  ls -R
+ 1971  cd data 
+ 1972  ls -l
+ 1973  cd .. 
+ 1974  sudo su ivanov 
+ 1975  touch newfile.txt
+ 1976  cd docs
+ 1977  touch rights_differences.txt
+ 1978  nano rights_differences.txt
+ 1979  su evgen0805
+ 1980  cd ..
+ 1981  cd history/
+ 1982  touch history_task2.txt 
+ 1983  history | tail -n 100 > history_task2.txt
