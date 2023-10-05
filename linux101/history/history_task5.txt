@@ -1,0 +1,100 @@
+EOS
+
+ 2062  nano FindString.sh 
+ 2063  << EOF > FindString.sh 
+#!/bin/bash
+# Input
+search_string="$1"
+# Перебираем файлы в папке data
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+    if [ -f "$data_file" ]; then
+        grep "$search_string" "$data_file"
+    fi
+done
+EOF
+
+ 2064  nano FindString.sh 
+ 2065  cat << EOF > FindString.sh 
+#!/bin/bash
+# Input
+search_string="$1"
+# Перебираем файлы в папке data
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+    if [ -f "$data_file" ]; then
+        grep "$search_string" "$data_file"
+    fi
+done
+EOF
+
+ 2066  nano FindString.sh 
+ 2067  ./FindString.sh Андрей
+ 2068  nano FindString.sh 
+ 2069  ./FindString.sh Андрей
+ 2070  clear
+ 2071  cd /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/scripts/
+ 2072  touch grep_script.sh
+ 2073  ls
+ 2074  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+file_name="$1"
+search_string="$2"
+grep "$search_string" "$file_name"
+EOF
+
+ 2075  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+file_name="$1"
+search_string="$2"
+if [ -f "$file_name" ]; then
+
+ 2076  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+file_name="$1"
+search_string="$2"
+if [ -f "$file_name" ]; then
+grep "$search_string" "$file_name"
+else
+   echo "File doesn't exist"
+fi
+EOF
+
+ 2077  nano grep_script.sh 
+ 2078  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+search_string="$1"
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+    if [ -f "$data_file" ]; then
+        grep "$search_string" "$data_file"
+    fi
+done
+EOF
+
+ 2079  cat grep_script.sh 
+ 2080  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+search_string="$1"
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+f [ -f "$data_file" ]; then
+
+ 2081  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+search_string="$1"
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+if [ -f "" ]; then
+
+ 2082  cat << 'EOF' > grep_script.sh 
+#!/bin/bash
+search_string="$1"
+for data_file in /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data/*; do
+if [ -f "$data_file" ]; then
+grep "$search_string" "$data_file"
+fi
+done
+EOF
+
+ 2083  cat grep_script.sh 
+ 2084  nano
+ 2085  cat grep_script.sh 
+ 2086  cd ..
+ 2087  cd history/
+ 2088  history | tail -n 100 > history_task5.txt
