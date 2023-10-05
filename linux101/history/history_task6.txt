@@ -1,0 +1,100 @@
+ 1912  ls
+ 1913  grep --help
+ 1914  grep -i -c "Андрей" war_and_peace.ru.txt | less
+ 1915  grep -oi "Андрей" war_and_peace.ru.txt | wc -l | less
+ 1916  grep -oi "Андрей" war_and_peace.ru.txt | less
+ 1917  git status
+ 1918  cd ..
+ 1919  git status
+ 1920  git add docs/rights_differences.txt history/history_task2.txt scripts/
+ 1921  git status
+ 1922  git commit -m "Chore: add script and text files (task 2)"
+ 1923  git status
+ 1924  cd data
+ 1925  ls
+ 1926  grep -oi "Андрей" war_and_peace.ru.txt | wc -l > andrey_result.txt && grep -oi "Андрея" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрею" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреем" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрее" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреи" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреев" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреям" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреями" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреях" war_and_peace.ru.txt | wc -l >> andrey_result.txt
+ 1927  cat andrey_result.txt 
+ 1928  sed -i '1s/^/Андрей\t/' andrey_result.txt && sed -i '2s/^/Андрея\t/' andrey_result.txt && sed -i '3s/^/Андрею\t/' andrey_result.txt && sed -i '4s/^/Андреем\t/' andrey_result.txt && sed -i '5s/^/Андрее\t/' andrey_result.txt && sed -i '6s/^/Андреи\t/' andrey_result.txt && sed -i '7s/^/Андреев\t/' andrey_result.txt && sed -i '8s/^/Андреям\t/' andrey_result.txt && sed -i '9s/^/Андреями\t/' andrey_result.txt && sed -i '10s/^/Андреях\t/' andrey_result.txt
+ 1929  cat andrey_result.txt 
+ 1930  nano andrey_result.txt 
+ 1931  wc -l war_and_peace.ru.txt 
+ 1932  wc --chars > count_results.txt
+ 1933  wc --chars war_and_peace.ru.txt > count_results.txt
+ 1934  cd ..
+ 1935  find linux101 -mtime -0.25 > last_6h_edited_files.txt
+ 1936  cd ..
+ 1937  find linux101 -mtime -0.25 > last_6h_edited_files.txt
+ 1938  rm last_6h_edited_files.txt 
+ 1939  find linux101 -mtime -0.25 > linux101/data/last_6h_edited_files.txt
+ 1940  history | tail -n 100 > history_task3.txt
+ 1941  mv history_task3.txt linux101/history/history_task3.txt
+ 1942  ls
+ 1943  cd linux101/history/
+ 1944  ls
+ 1945  nano history_task3.txt 
+ 1946  git status
+ 1947  cd ../..
+ 1948  git status
+ 1949  git add *
+ 1950  git status
+ 1951  git commit -m "Chore: add text files (task 3)"
+ 1952  git status
+ 1953  git log
+ 1954  cd /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private
+ 1955  nano &
+ 1956  blast &
+ 1957  ps
+ 1958  fg %1
+ 1959  history | tail -n 100 > linux101/history/history_task4.txt
+ 1960  git status
+ 1961  cat linux101/history/history_task4.txt 
+ 1962  cd ~/miniconda3/envs/lab_task_1/test_1/
+ 1963  ls
+ 1964  blast -query db2023.fasta -in db_23 -task blastn -dust no -outfmt 6 -max_target_seqs 1 > res_to_delete.txt &
+ 1965  blast -query db2023.fasta -in db_23 -task blastn -dnust no -outfmt 6 -max_target_seqs 1 > res_to_delete.txt &
+ 1966  nano &
+ 1967  ps
+ 1968  ls
+ 1969  head res_to_delete.txt 
+ 1970  blastn -query db2023.fasta -in db_23 -task blastn -dust no -outfmt 6 -max_target_seqs 1 > res_to_delete.txt &
+ 1971  blastn -query db2023.fasta -db db_23 -task blastn -dust no -outfmt 6 -max_target_seqs 1 > res_to_delete.txt &
+ 1972  ps
+ 1973  fg %3
+ 1974  ps
+ 1975  fg %2
+ 1976  ps
+ 1977  history | tail
+ 1978  cd linux101/resources/
+ 1979  ls
+ 1980  free -h > memory_usage.txt
+ 1981  df -h > disk_space.txt
+ 1982  top
+ 1983  sudo apt install gnome-screenshot
+ 1984  sudo apt install scrot
+ 1985  top
+ 1986  scrot -s cpu_activity.png
+ 1987  scrot uninstall
+ 1988  suto apt -h
+ 1989  sudo -help
+ 1990  apt -help
+ 1991  sudo apt -h
+ 1992  sudo apt remove scrot
+ 1993  sudo apt install imagemagick xdotool
+ 1994  top
+ 1995  import -window root cpu_activity.png
+ 1996  import -window ./ cpu_activity.png
+ 1997  ipmport -h
+ 1998  import -h
+ 1999  import -help
+ 2000  import -type png ./ cpu_activity.png
+ 2001  import cpu_activity.png
+ 2002  import t -screen cpu_activity.png
+ 2003  hisroty | tail
+ 2004  history | tail
+ 2005  cp mnt/c/Users/Teclast/Documents/ShareX/Screenshots/2023-10/cpu_activity.png cpu_activity.png
+ 2006  cp /mnt/c/Users/Teclast/Documents/ShareX/Screenshots/2023-10/cpu_activity.png cpu_activity.png
+ 2007  ls
+ 2008  rm uninstall uninstall_000 
+ 2009  ls
+ 2010  cd ..
+ 2011  history | tail -n 100 > history/history_task6.txt
