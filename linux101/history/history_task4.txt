@@ -1,0 +1,101 @@
+ 1937  ls -la
+ 1938  chmod 600 numbers.txt
+ 1939  ls -la
+ 1940  chmod 644 numbers.txt
+ 1941  cd ..
+ 1942  tree
+ 1943  cd data/
+ 1944  ls -l
+ 1945  cd ..
+ 1946  sudo su ivanov
+ 1947  cd MyGitHubReps
+ 1948  cd DDI_2023_private/linux101/
+ 1949  tree
+ 1950  nano docs/rights_differences.txt
+ 1951  ls
+ 1952  mkdir test
+ 1953  ls
+ 1954  cd test/
+ 1955  cd ..
+ 1956  ls
+ 1957  rm -r test/
+ 1958  ls
+ 1959  nano docs/rights_differences.txt
+ 1960  rm newfile.txt 
+ 1961  ls
+ 1962  ls
+ 1963  mkdir test_rights
+ 1964  cd test_rights/
+ 1965  touch file.txt
+ 1966  ls -l
+ 1967  ln file.txt
+ 1968  ln file.txt fileHardLink.txt
+ 1969  ln -s file.txt fileSoftLink.txt
+ 1970  ls
+ 1971  ls -l
+ 1972  chmod 644 file.txt
+ 1973  ls -l
+ 1974  chmod 640 file.txt
+ 1975  ls -l
+ 1976  sudo su ivanov
+ 1977  cd linux101/data/
+ 1978  wget https://gist.github.com/Semionn/bdcb66640cc070450817686f6c818897
+ 1979  ls
+ 1980  rm bdcb66640cc070450817686f6c818897 
+ 1981  ls
+ 1982  wget https://gist.github.com/Semionn/bdcb66640cc070450817686f6c818897 war_and_peace.ru.txt
+ 1983  ls
+ 1984  rm bdcb66640cc070450817686f6c818897 
+ 1985  cd ..
+ 1986  cd /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private/linux101/data
+ 1987  wget https://gist.github.com/Semionn/bdcb66640cc070450817686f6c818897 -0 war_and_peace.ru.txt
+ 1988  wget https://gist.github.com/Semionn/bdcb66640cc070450817686f6c818897 -O war_and_peace.ru.txt
+ 1989  ls
+ 1990  grep --help
+ 1991  grep -i -c "Андрей" war_and_peace.ru.txt | less
+ 1992  grep -oi "Андрей" war_and_peace.ru.txt | wc -l | less
+ 1993  grep -oi "Андрей" war_and_peace.ru.txt | less
+ 1994  git status
+ 1995  cd ..
+ 1996  git status
+ 1997  git add docs/rights_differences.txt history/history_task2.txt scripts/
+ 1998  git status
+ 1999  git commit -m "Chore: add script and text files (task 2)"
+ 2000  git status
+ 2001  cd data
+ 2002  ls
+ 2003  grep -oi "Андрей" war_and_peace.ru.txt | wc -l > andrey_result.txt && grep -oi "Андрея" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрею" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреем" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрее" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреи" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреев" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреям" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреями" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреях" war_and_peace.ru.txt | wc -l >> andrey_result.txt
+ 2004  cat andrey_result.txt 
+ 2005  sed -i '1s/^/Андрей\t/' andrey_result.txt && sed -i '2s/^/Андрея\t/' andrey_result.txt && sed -i '3s/^/Андрею\t/' andrey_result.txt && sed -i '4s/^/Андреем\t/' andrey_result.txt && sed -i '5s/^/Андрее\t/' andrey_result.txt && sed -i '6s/^/Андреи\t/' andrey_result.txt && sed -i '7s/^/Андреев\t/' andrey_result.txt && sed -i '8s/^/Андреям\t/' andrey_result.txt && sed -i '9s/^/Андреями\t/' andrey_result.txt && sed -i '10s/^/Андреях\t/' andrey_result.txt
+ 2006  cat andrey_result.txt 
+ 2007  nano andrey_result.txt 
+ 2008  wc -l war_and_peace.ru.txt 
+ 2009  wc --chars > count_results.txt
+ 2010  wc --chars war_and_peace.ru.txt > count_results.txt
+ 2011  cd ..
+ 2012  find linux101 -mtime -0.25 > last_6h_edited_files.txt
+ 2013  cd ..
+ 2014  find linux101 -mtime -0.25 > last_6h_edited_files.txt
+ 2015  rm last_6h_edited_files.txt 
+ 2016  find linux101 -mtime -0.25 > linux101/data/last_6h_edited_files.txt
+ 2017  history | tail -n 100 > history_task3.txt
+ 2018  mv history_task3.txt linux101/history/history_task3.txt
+ 2019  ls
+ 2020  cd linux101/history/
+ 2021  ls
+ 2022  nano history_task3.txt 
+ 2023  git status
+ 2024  cd ../..
+ 2025  git status
+ 2026  git add *
+ 2027  git status
+ 2028  git commit -m "Chore: add text files (task 3)"
+ 2029  git status
+ 2030  git log
+ 2031  cd /mnt/c/Users/Teclast/Documents/repositories/DDI_2023_private
+ 2032  nano &
+ 2033  blastn -query db2023.fasta -db db2023 -task blastn -dust no -outfmt 6 > ResToDelete.txt &
+ 2034  ps
+ 2035  fg %1
+ 2036  history | tail -n 100 > linux101/history/history_task4.txt
+
