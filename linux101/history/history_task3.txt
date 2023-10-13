@@ -83,18 +83,19 @@
  2000  git status
  2001  cd data
  2002  ls
- 2003  grep -oi "Андрей" war_and_peace.ru.txt | wc -l > andrey_result.txt && grep -oi "Андрея" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрею" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреем" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрее" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреи" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреев" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреям" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреями" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреях" war_and_peace.ru.txt | wc -l >> andrey_result.txt
+ 2003  grep -oi "Андрей" war_and_peace.ru.txt | wc -l > andrey_result.txt && grep -oi "Андрея" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрею" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреем" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андрее" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреи" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреев" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреям" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреями" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "Андреях" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "andrey" war_and_peace.ru.txt | wc -l >> andrey_result.txt && grep -oi "andré" war_and_peace.ru.txt | wc -l >> andrey_result.txt
  2004  cat andrey_result.txt 
- 2005  sed -i '1s/^/Андрей\t/' andrey_result.txt && sed -i '2s/^/Андрея\t/' andrey_result.txt && sed -i '3s/^/Андрею\t/' andrey_result.txt && sed -i '4s/^/Андреем\t/' andrey_result.txt && sed -i '5s/^/Андрее\t/' andrey_result.txt && sed -i '6s/^/Андреи\t/' andrey_result.txt && sed -i '7s/^/Андреев\t/' andrey_result.txt && sed -i '8s/^/Андреям\t/' andrey_result.txt && sed -i '9s/^/Андреями\t/' andrey_result.txt && sed -i '10s/^/Андреях\t/' andrey_result.txt
+ 2005  sed -i '1s/^/Андрей\t/' andrey_result.txt && sed -i '2s/^/Андрея\t/' andrey_result.txt && sed -i '3s/^/Андрею\t/' andrey_result.txt && sed -i '4s/^/Андреем\t/' andrey_result.txt && sed -i '5s/^/Андрее\t/' andrey_result.txt && sed -i '6s/^/Андреи\t/' andrey_result.txt && sed -i '7s/^/Андреев\t/' andrey_result.txt && sed -i '8s/^/Андреям\t/' andrey_result.txt && sed -i '9s/^/Андреями\t/' andrey_result.txt && sed -i '10s/^/Андреях\t/' andrey_result.txt && sed -i '11s/^/André\t/' andrey_result.txt && sed -i '12s/^/Andrey\t/' andrey_result.txt
  2006  cat andrey_result.txt 
  2007  nano andrey_result.txt 
  2008  wc -l war_and_peace.ru.txt 
- 2009  wc --chars > count_results.txt
- 2010  wc --chars war_and_peace.ru.txt > count_results.txt
+ 2009  wc --chars > count_result.txt
+ 2010  wc --chars war_and_peace.ru.txt > count_result.txt
  2011  cd ..
  2012  ls
  2013  cd ..
  2014  ls -l
  2015  ls -R 
  2016  find linux101 -mtime -0.25 > linux101/data/last_6h_edited_files.txt
- 2017  history | tail -n 100 > linux101/history/history_task3.txt
+ 2017  rm linux101/data/last_6h_edited_files.txt
+ 2018  history | tail -n 100 > linux101/history/history_task3.txt

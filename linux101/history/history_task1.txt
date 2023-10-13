@@ -97,4 +97,5 @@
  2021  du -a --inodes data
  2022  nano docs/links_differences.txt
  2023  cat docs/links_differences.txt 
- 2024  history | tail -n 100 > history/history_task1.txt
+ 2024  sed -i '/^$/d' numbers.txt
+ 2025  history | tail -n 100 > history/history_task1.txt
