@@ -8,15 +8,35 @@ import asyncio
 
 app = FastAPI()
 
+# Простая структура данных для хранения сообщений
+messages = []
+
 class GenerateRequest(BaseModel):
     prompt: str
     max_tokens: int = 128
     temperature: float = 0.7
     top_p: float = 1.0
 
+class Message(BaseModel):
+    text: str
+    liked: bool = False
+    disliked: bool = False
+
 @app.get("/")
 def read_root():
     return {"app.py is running"}
+
+@app.get("/messages")
+def get_messages():
+    return {"messages": messages}
+
+@app.put("/message/{message_id}")
+def update_message(message_id: int, message_update: Message):
+    if message_id < 0 or message_id >= len(messages):
+        raise HTTPException(status_code=404, detail="Message not found")
+
+    messages[message_id] = message_update.dict()
+    return {"message": messages[message_id]}
 
 @app.post("/generate")
 async def generate_answer(request: GenerateRequest):
@@ -46,7 +66,11 @@ async def generate_answer(request: GenerateRequest):
         # Преобразование вывода в строку
         output = stdout.decode('utf-8').strip()
 
-        return {"text": output}
+        # Добавление ответа в список сообщений
+        generated_message = {"text": output, "liked": False, "disliked": False}
+        messages.append(generated_message)
+
+        return generated_message
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
