@@ -6,19 +6,35 @@ const ChatGPT = () => {
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (currentMessage) {
       const userMessage = { text: currentMessage, isBotMessage: false };
-      const botMessage = {
-        text: 'Thank you for your message. But I don’t know what to say',
-        isBotMessage: true,
-        liked: false,
-        disliked: false,
-      };
-      setMessages([...messages, userMessage, botMessage]);
+      setMessages([...messages, userMessage]);
+  
+      try {
+        const response = await fetch('http://localhost:8000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: currentMessage })
+        });
+  
+        const data = await response.json();
+        const botMessage = {
+          text: data.text,
+          isBotMessage: true,
+          liked: false,
+          disliked: false,
+        };
+        setMessages(messages => [...messages, botMessage]);
+      } catch (error) {
+        console.error('Ошибка при обращении к API:', error);
+      }
+  
       setCurrentMessage('');
     }
-  };
+  };  
 
   const handleLike = (index) => {
     if (messages[index].isBotMessage) {
