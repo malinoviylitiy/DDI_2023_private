@@ -4,6 +4,7 @@ from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 import subprocess
 import os
+import asyncio
 
 app = FastAPI()
 
@@ -20,25 +21,30 @@ def read_root():
 @app.post("/generate")
 async def generate_answer(request: GenerateRequest):
     try:
-        # Определяем относительный путь к llama.cpp
-        current_directory = os.path.dirname(os.path.realpath(__file__))
-        llama_cpp_path = os.path.join(current_directory, "llama.cpp")
+        # Путь к директории, где находится app.py
+        app_directory = os.path.dirname(os.path.realpath(__file__))
         
-        # Формируем команду для вызова llama.cpp
-        command = [
-            "./main", 
-            "-m", "models/mistral-7b-v0.1.Q8_0.gguf", 
-            "-p", request.prompt
-        ]
+        # Путь к исполняемому файлу внутри директории llama.cpp
+        executable_path = os.path.join(app_directory, "main")
 
-        # Выполнение команды
-        result = subprocess.run(command, cwd="/home/evgen0805/GitHubReps/DDI_2023_private/chatLLM/backend/llama.cpp", capture_output=True, text=True)
+        # Формируем команду для вызова исполняемого файла
+        command = f"timeout 10 {executable_path} -m models/mistral-7b-v0.1.Q8_0.gguf -p {request.prompt}"
 
-        if result.returncode != 0:
-            raise Exception("Error in llama.cpp")
+        # Асинхронное выполнение команды
+        process = await asyncio.create_subprocess_shell(
+            command,
+            cwd=app_directory,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE
+        )
+        
+        stdout, stderr = await process.communicate()
 
-        # Преобразование вывода в строку (предполагается, что llama.cpp возвращает строку)
-        output = result.stdout.strip()
+        if process.returncode != 0:
+            raise Exception(f"Error in llama.cpp: {stderr.decode('utf-8')}")
+
+        # Преобразование вывода в строку
+        output = stdout.decode('utf-8').strip()
 
         return {"text": output}
     except Exception as e:
