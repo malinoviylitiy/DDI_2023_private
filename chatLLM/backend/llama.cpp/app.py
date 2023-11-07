@@ -35,7 +35,7 @@ def update_message(message_id: int, message_update: Message):
     if message_id < 0 or message_id >= len(messages):
         raise HTTPException(status_code=404, detail="Message not found")
 
-    messages[message_id] = message_update.dict()
+    messages[message_id] = message_update.model_dump()
     return {"message": messages[message_id]}
 
 @app.post("/generate")
@@ -47,8 +47,11 @@ async def generate_answer(request: GenerateRequest):
         # Путь к исполняемому файлу внутри директории llama.cpp
         executable_path = os.path.join(app_directory, "main")
 
+        # Путь к модели относительно app_directory
+        model_path = os.path.join(app_directory, "models/mistral-7b-v0.1.Q8_0.gguf")
+
         # Формируем команду для вызова исполняемого файла
-        command = f"timeout 10 {executable_path} -m models/mistral-7b-v0.1.Q8_0.gguf -p {request.prompt}"
+        command = f"{executable_path} -m {model_path} -p {request.prompt} -n 5"
 
         # Асинхронное выполнение команды
         process = await asyncio.create_subprocess_shell(

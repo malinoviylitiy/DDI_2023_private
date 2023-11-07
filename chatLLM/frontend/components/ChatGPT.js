@@ -36,7 +36,7 @@ const ChatGPT = () => {
     }
   };  
 
-  const handleLike = (index) => {
+  const handleLike = async (index) => {
     if (messages[index].isBotMessage) {
       const updatedMessages = [...messages];
       updatedMessages[index].liked = !updatedMessages[index].liked;
@@ -44,6 +44,18 @@ const ChatGPT = () => {
       setMessages(updatedMessages);
       setLikeActive(!likeActive);
       setDislikeActive(false);
+  
+      try {
+        await fetch(`http://localhost:8000/message/${index}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedMessages[index])
+        });
+      } catch (error) {
+        console.error('Ошибка при обновлении сообщения:', error);
+      }
     }
   };
 
