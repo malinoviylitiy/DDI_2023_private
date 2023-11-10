@@ -1,0 +1,16 @@
+#game button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#game img {
+    width: 100px; /* Или любой другой размер */
+    height: auto;
+    border-radius: 1rem;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+}
