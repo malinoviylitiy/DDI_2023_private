@@ -1,8 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). To write the code for the frontend, ChatGPT (GPT 3.5 turbo) was used. 
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+This guide assumes that you've already completed the steps to set up your Next.js development environment, including: 
+- [Node.js 18.17](https://nodejs.org/) or later
+- macOS, Windows (including WSL), or Linux
+- [Next.js](https://nextjs.org/docs/getting-started/installation)
+
+### Running the app
+
+First, clone repository and run the development server:
 
 ```bash
 npm run dev
@@ -20,7 +29,11 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Prompts
+
+You can see the prompts that were used in [the coding.prompts file](https://github.com/malinoviylitiy/DDI_2023_private/edit/main/chatLLM/prompts/coding.prompts) in the chatLLM/prompts folder.
+
+## Learn More about Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
