@@ -6,21 +6,37 @@ const ChatGPT = () => {
   const [likeActive, setLikeActive] = useState(false);
   const [dislikeActive, setDislikeActive] = useState(false);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (currentMessage) {
       const userMessage = { text: currentMessage, isBotMessage: false };
-      const botMessage = {
-        text: 'Thank you for your message. But I don’t know what to say',
-        isBotMessage: true,
-        liked: false,
-        disliked: false,
-      };
-      setMessages([...messages, userMessage, botMessage]);
+      setMessages([...messages, userMessage]);
+  
+      try {
+        const response = await fetch('http://localhost:8000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt: currentMessage })
+        });
+  
+        const data = await response.json();
+        const botMessage = {
+          text: data.text,
+          isBotMessage: true,
+          liked: false,
+          disliked: false,
+        };
+        setMessages(messages => [...messages, botMessage]);
+      } catch (error) {
+        console.error('Ошибка при обращении к API:', error);
+      }
+  
       setCurrentMessage('');
     }
-  };
+  };  
 
-  const handleLike = (index) => {
+  const handleLike = async (index) => {
     if (messages[index].isBotMessage) {
       const updatedMessages = [...messages];
       updatedMessages[index].liked = !updatedMessages[index].liked;
@@ -28,6 +44,18 @@ const ChatGPT = () => {
       setMessages(updatedMessages);
       setLikeActive(!likeActive);
       setDislikeActive(false);
+  
+      try {
+        await fetch(`http://localhost:8000/message/${index}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatedMessages[index])
+        });
+      } catch (error) {
+        console.error('Ошибка при обновлении сообщения:', error);
+      }
     }
   };
 
